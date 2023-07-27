@@ -62,3 +62,42 @@ finally(() => {
 })
 
  */
+
+const promiseFive = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    let error = false;
+    if (!error) {
+      resolve({ username: "sarvesh", email: "sarvesh@gmail.com" });
+    } else {
+      reject("oops something went wrong");
+    }
+  }, 1000);
+});
+
+async function consumePromise() {
+  try {
+    const res = await promiseFive;
+    console.log(res);
+  } catch (errr) {
+    console.log(errr);
+  }
+}
+
+consumePromise();
+
+// using async and await 
+
+// const getUserInfo = async () => {
+//     const res = await fetch("https://api.github.com/users/hiteshchoudhary");
+//     const  info = await res.json();
+//     console.log(info);
+// }
+
+// getUserInfo();
+
+// lets do same thing  with fetch
+
+fetch("https://api.github.com/users/hiteshchoudhary")
+.then((res) => res.json())
+.then((data) => console.log(data))
+.catch((error) => console.log(error))
