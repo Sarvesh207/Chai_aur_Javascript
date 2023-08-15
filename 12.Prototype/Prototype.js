@@ -1,40 +1,60 @@
-function multuply(num) {
-    return num * 5;
+let myName = "Sarvesh     "
+
+
+
+let myHeros = ["thor", "spiderman"]
+
+let heroPwer = {
+    thor:"Hamer",
+    spiderMan:"Sling",
+
+    getSpiderManPower:function(){
+        console.log(`Spidy power is ${this.Spiderman}`);
+    }
 }
 
-
-multuply.power = 2;
-
-console.log(multuply(5));
-console.log(multuply.power);
-console.log(multuply.prototype);
-
-function createUser(userName, score){
-    this.userName = userName;
-    this.score = score;
+Object.prototype.sarvesh = function(){
+    console.log(`sarvesh is present in all object`)
 }
 
-createUser.prototype.increment = function(){
-    this.score++;
+Array.prototype.heySarvesh = function(){
+    console.log(`Sarvesh says hello`)
+}
+heroPwer.sarvesh();
+myHeros.sarvesh();
+// heroPwer.heySarvesh();
+
+//inhertance 
+
+const user = {
+    name:"chai",
+    email:"chai@google.com"
+}
+const Teacher = {
+    makeVideo:true
+
 }
 
-createUser.prototype.print = function() {
-    console.log(`this is ${this.score}`);
+const TeachingSupport = {
+    isAvailabel:false
 }
 
-const chai = new createUser("chai", 25)
-chai.print();
+const TASupport = {
+    makeAssignment : 'js assignment',
+    fullTime:true,
+    __proto__:TeachingSupport
+}
 
-/*
+Teacher.__proto__ = user;
 
-Here's what happens behind the scenes when the new keyword is used:
+// modern Syntax
+Object.setPrototypeOf(TeachingSupport, Teacher)
 
-A new object is created: The new keyword initiates the creation of a new JavaScript object.
+let anotherUserName = "ChaiAurCode    "
 
-A prototype is linked: The newly created object gets linked to the prototype property of the constructor function. This means that it has access to properties and methods defined on the constructor's prototype.
-
-The constructor is called: The constructor function is called with the specified arguments and this is bound to the newly created object. If no explicit return value is specified from the constructor, JavaScript assumes this, the newly created object, to be the intended return value.
-
-The new object is returned: After the constructor function has been called, if it doesn't return a non-primitive value (object, array, function, etc.), the newly created object is returned.
-
-*/
+String.prototype.trueLength = function(){
+    console.log(`${this}`)
+      
+    console.log(`True length ${this.trim().length}`)
+}
+ anotherUserName.trueLength();
