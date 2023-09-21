@@ -1,8 +1,8 @@
-// const promiseOne = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         console.log('async opration completed');
-//     },1000)
-// })
+const promiseOne = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log('async opration completed');
+    },1000)
+})
 
 /*
 promiseOne.then(() => {
@@ -63,25 +63,25 @@ finally(() => {
 
  */
 
-const promiseFive = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    let error = false;
-    if (!error) {
-      resolve({ username: "sarvesh", email: "sarvesh@gmail.com" });
-    } else {
-      reject("oops something went wrong");
-    }
-  }, 1000);
-});
+// const promiseFive = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     let error = false;
+//     if (!error) {
+//       resolve({ username: "sarvesh", email: "sarvesh@gmail.com" });
+//     } else {
+//       reject("oops something went wrong");
+//     }
+//   }, 1000);
+// });
 
-async function consumePromise() {
-  try {
-    const res = await promiseFive;
-    console.log(res);
-  } catch (errr) {
-    console.log(errr);
-  }
-}
+// async function consumePromise() {
+//   try {
+//     const res = await promiseFive;
+//     console.log(res);
+//   } catch (errr) {
+//     console.log(errr);
+//   }
+// }
 
 consumePromise();
 
@@ -97,7 +97,7 @@ consumePromise();
 
 // lets do same thing  with fetch
 
-fetch("https://api.github.com/users/hiteshchoudhary")
-.then((res) => res.json())
-.then((data) => console.log(data))
-.catch((error) => console.log(error))
+// fetch("https://api.github.com/users/hiteshchoudhary")
+// .then((res) => res.json())
+// .then((data) => console.log(data))
+// .catch((error) => console.log(error))
