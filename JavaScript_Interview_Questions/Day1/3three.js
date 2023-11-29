@@ -1,5 +1,5 @@
 foo = 30;
 console.log("Foo", foo);
- var foo = 100;
+ let foo = 100;
 
- console.log("Foo", foo);
+ console.log("Foo", foo)
