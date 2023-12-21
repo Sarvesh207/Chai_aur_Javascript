@@ -1,3 +1,48 @@
+const cart = ["shoes", "pants", "kurtas"]
+
+api.createOrder(cart, function(){
+    api.proceedTOPayments(function (){
+        api.showOrderSummary(function(){
+          api.updateWallet()
+
+        })
+
+    });
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // console.log("Hello Callback")
 
 // setTimeout(() => {
@@ -13,14 +58,14 @@
 //   console.log("Y");
 // });
 
-const btn = document.getElementById("clickMe");
-console.log(btn);
+// const btn = document.getElementById("clickMe");
+// console.log(btn);
 
-function attachEventListners() {
-  let count = 0;
+// function attachEventListners() {
+//   let count = 0;
 
-  btn.addEventListener("click", function xyz() {
-    console.log("Button Clicked", count++);
-  });
-}
-attachEventListners();
+//   btn.addEventListener("click", function xyz() {
+//     console.log("Button Clicked", count++);
+//   });
+// }
+// attachEventListners();
